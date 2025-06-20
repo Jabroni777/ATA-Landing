@@ -525,8 +525,56 @@
           </script>
         </div>
         <div class="widget">
+          <h3>Tell Us About You</h3>
+          <div data-tf-live="01JY7KH6HCJMHFK891P9TZBJ48"></div>
+          <script src="//embed.typeform.com/next/embed.js"></script>
+        </div>
+        <div class="widget">
           <h3>Testimonials</h3>
-          <p>[Quote or rotating testimonial carousel]</p>
+          <div class="testimonial-carousel">
+            <div class="testimonial active">
+              <p>"ATA's support changed everything for my dad. He can finally navigate the web with confidence!"</p>
+              <strong>- Maria L., caregiver</strong>
+            </div>
+            <div class="testimonial">
+              <p>"I never thought I'd be able to manage my emails and Zoom calls, but my coach made it easy."</p>
+              <strong>- James K., senior client</strong>
+            </div>
+            <div class="testimonial">
+              <p>"The training I received from ATA gave me the skills and purpose I was missing."</p>
+              <strong>- Lex R., gig coach</strong>
+            </div>
+          </div>
+          <style>
+            .testimonial-carousel {
+              position: relative;
+              overflow: hidden;
+              height: 120px;
+            }
+            .testimonial {
+              position: absolute;
+              top: 0;
+              left: 0;
+              width: 100%;
+              opacity: 0;
+              transition: opacity 0.5s ease-in-out;
+            }
+            .testimonial.active {
+              opacity: 1;
+              position: relative;
+            }
+          </style>
+          <script>
+            document.addEventListener("DOMContentLoaded", function () {
+              const testimonials = document.querySelectorAll(".testimonial-carousel .testimonial");
+              let current = 0;
+              setInterval(() => {
+                testimonials[current].classList.remove("active");
+                current = (current + 1) % testimonials.length;
+                testimonials[current].classList.add("active");
+              }, 5000);
+            });
+          </script>
         </div>
         <div class="widget">
           <h3>Follow Us</h3>
@@ -534,7 +582,25 @@
         </div>
         <div class="widget">
           <h3>Newsletter Signup</h3>
-          <p>[Form or button to subscribe]</p>
+          <div class="google-form-wrapper">
+            <iframe src="https://docs.google.com/forms/d/e/1FAIpQLSfiDjtDYkQy6qsalcWSbWsLdBrv2NENAP3VDQbAwYCTv2UhDw/viewform?embedded=true"
+              width="100%" height="700" frameborder="0" marginheight="0" marginwidth="0">
+              Loading…
+            </iframe>
+          </div>
+          <style>
+            .google-form-wrapper {
+              max-width: 100%;
+              overflow: hidden;
+              border-radius: 8px;
+              box-shadow: 0 4px 16px rgba(0, 0, 0, 0.1);
+            }
+
+            .google-form-wrapper iframe {
+              width: 100%;
+              border: none;
+            }
+          </style>
         </div>
         <div class="widget">
           <h3>Meet the Team</h3>
