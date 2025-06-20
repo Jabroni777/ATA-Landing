@@ -241,10 +241,46 @@
           <h2>Our MVP: What We’re Launching</h2>
           <p>ATA’s Minimum Viable Product delivers real value on day one:</p>
           <ul class="offer-list">
-            <li>🎯 Personalized remote tech coaching</li>
-            <li>🧩 Gamified self-assessment onboarding tool</li>
-            <li>📚 Digital literacy content hub</li>
-            <li>⚙️ Flexible support subscriptions</li>
+            <li>
+              🎯 Personalized remote tech coaching
+              <span class="tooltip">
+                <ul>
+                  <li>Real-time, compassionate support from trained inclusion coaches</li>
+                  <li>Focused on building confidence, not just solving problems</li>
+                  <li>Designed to empower rather than replace client capability</li>
+                </ul>
+              </span>
+            </li>
+            <li>
+              🧩 Gamified self-assessment onboarding tool
+              <span class="tooltip">
+                <ul>
+                  <li>Helps users discover their digital strengths and needs playfully</li>
+                  <li>Customizes onboarding pathways for greater relevance</li>
+                  <li>Reduces friction and fear at the start of the support journey</li>
+                </ul>
+              </span>
+            </li>
+            <li>
+              📚 Digital literacy content hub
+              <span class="tooltip">
+                <ul>
+                  <li>Guided tutorials, accessibility-first design, and clear language</li>
+                  <li>Offers practical help: from setting up email to using online banking</li>
+                  <li>Continuously evolving based on community needs</li>
+                </ul>
+              </span>
+            </li>
+            <li>
+              ⚙️ Flexible support subscriptions
+              <span class="tooltip">
+                <ul>
+                  <li>Tiered pricing for individuals, caregivers, and organizations</li>
+                  <li>From on-demand support to full coaching packages</li>
+                  <li>Maximizes autonomy with sustainable affordability</li>
+                </ul>
+              </span>
+            </li>
           </ul>
         </section>
 
@@ -313,9 +349,16 @@
         </div>
         <div class="widget">
           <h3>Support Our Work</h3>
-          <a href="https://fnd.us/ToolsForInclusion2025" class="cta-button" target="_blank" style="display: inline-block; padding: 12px 20px; background-color: #007acc; color: white; text-decoration: none; border-radius: 5px; font-weight: 600; text-align: center;">
-            Support Us on FundRazr
-          </a>
+          <div class="fr-widget" data-type="badge" data-variant="rectangle" data-width="300" data-url="https://fnd.us/ToolsForInclusion2025"></div>
+          <script>
+            (function() {
+              var d = document, fr = d.createElement('script');
+              fr.type = 'text/javascript'; fr.async = true;
+              fr.src = 'https://static.fundrazr.com/widgets/loader.js';
+              var s = d.getElementsByTagName('script')[0];
+              s.parentNode.insertBefore(fr, s);
+            })();
+          </script>
         </div>
         <div class="widget">
           <h3>Testimonials</h3>
@@ -338,7 +381,6 @@
       </div>
     </div>
   </main>
-</script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
     const isMobile = window.innerWidth <= 768;
