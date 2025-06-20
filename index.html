@@ -17,7 +17,7 @@
       transition: background 0.3s ease, box-shadow 0.3s ease;
     }
 
-    .offer-list li:active,
+    .offer-list li.active-touch,
     .cta-button:active,
     .timeline li:active,
     .widget:active {
@@ -357,6 +357,13 @@
           });
           // Toggle this one
           tooltip.style.display = (tooltip.style.display === "block") ? "none" : "block";
+        });
+
+        item.addEventListener("pointerdown", function () {
+          item.classList.add("active-touch");
+          setTimeout(() => {
+            item.classList.remove("active-touch");
+          }, 300);
         });
       });
 
