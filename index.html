@@ -57,6 +57,13 @@
     }
 
     @media (max-width: 768px) {
+      /* On mobile, disable hover-to-show for tooltips. We'll show via JS click. */
+      .offer-list li:hover .tooltip {
+        display: none;
+      }
+    }
+
+    @media (max-width: 768px) {
       .offer-list li .tooltip {
         left: auto;
         right: 0;
@@ -303,16 +310,31 @@
       </div>
     </div>
   </main>
+</script>
 <script>
-  (function() {
-    var d = document,
-        fr = d.createElement('script');
-    fr.type = 'text/javascript';
-    fr.async = true;
-    fr.src = 'https://static.fundrazr.com/widgets/loader.js';
-    var s = d.getElementsByTagName('script')[0];
-    s.parentNode.insertBefore(fr, s);
-  })();
+  document.addEventListener("DOMContentLoaded", function () {
+    if (window.innerWidth <= 768) {
+      const offerItems = document.querySelectorAll(".offer-list li");
+
+      offerItems.forEach(item => {
+        const tooltip = item.querySelector(".tooltip");
+        if (!tooltip) return;
+
+        item.addEventListener("click", (e) => {
+          e.stopPropagation(); // prevent the document click from immediately hiding it
+          // Toggle current tooltip
+          const isVisible = tooltip.style.display === "block";
+          document.querySelectorAll(".offer-list .tooltip").forEach(t => t.style.display = "none");
+          tooltip.style.display = isVisible ? "none" : "block";
+        });
+      });
+
+      // Hide tooltip when clicking elsewhere
+      document.addEventListener("click", () => {
+        document.querySelectorAll(".offer-list .tooltip").forEach(t => t.style.display = "none");
+      });
+    }
+  });
 </script>
 </body>
 </html>
