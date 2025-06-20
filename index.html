@@ -1,0 +1,318 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Accessible Technology Assistance Inc.</title>
+  <link rel="stylesheet" href="style.css">
+  <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <style>
+    .video-placeholder,
+    .donation-placeholder {
+      background: transparent;
+      border: none;
+      padding: 0;
+      text-align: center;
+      color: inherit;
+      font-style: normal;
+      box-shadow: none;
+    }
+    .offer-list li {
+      position: relative;
+      padding: 10px;
+      background: #f8f9fb;
+      border-radius: 6px;
+      margin-bottom: 8px;
+    }
+
+    .offer-list li .tooltip {
+      display: none;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      left: 105%;
+      width: 320px;
+      background-color: white;
+      color: #333;
+      padding: 16px;
+      border: 1px solid #ccc;
+      border-radius: 8px;
+      font-size: 0.95em;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      z-index: 100;
+      text-align: left;
+    }
+
+    .offer-list li .tooltip ul {
+      padding-left: 18px;
+      margin: 0;
+    }
+
+    .offer-list li .tooltip li {
+      margin-bottom: 8px;
+      list-style-type: disc;
+    }
+
+    .offer-list li:hover .tooltip {
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .offer-list li .tooltip {
+        left: auto;
+        right: 0;
+        top: 100%;
+        margin-top: 8px;
+      }
+    }
+
+    .team-vision-container {
+      display: flex;
+      gap: 24px;
+      align-items: stretch;
+      margin-bottom: 2em;
+    }
+
+    .team-text {
+      flex: 2;
+    }
+
+    .team-image {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: #f1f1f1;
+      border-radius: 8px;
+      overflow: hidden;
+      min-width: 200px;
+    }
+
+    .team-image img {
+      max-width: 100%;
+      height: auto;
+      object-fit: cover;
+      display: block;
+    }
+
+    @media (max-width: 768px) {
+      .team-vision-container {
+        flex-direction: column;
+      }
+    }
+    .team-photo-widget {
+      width: 100%;
+      aspect-ratio: 4 / 3;
+      background-color: #f1f1f1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      border-radius: 6px;
+    }
+
+    .team-photo-widget img {
+      max-width: 100%;
+      height: auto;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="ATA Logo" class="logo">
+    <h1>Accessible Technology Assistance Inc.</h1>
+    <p>Empowering inclusive digital access through compassionate, client-centered tech support.</p>
+    <a href="#contact" class="cta">Work With Us</a>
+  </header>
+  <!-- Decorative SVG divider -->
+  <div class="header-divider">
+    <svg viewBox="0 0 1440 80" fill="none" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="none"><path d="M0,40 C480,120 960,0 1440,40 L1440,80 L0,80 Z" fill="#fff"/></svg>
+  </div>
+  <main>
+    <div class="main-layout">
+      <div class="main-content">
+        <section>
+          <h2>Why Now? The Urgent Need for Inclusive Tech</h2>
+          <p>As our world moves increasingly online, millions are left behind due to barriers in digital literacy, access, and usability. People with disabilities, seniors, and those facing systemic challenges are often excluded from essential digital spaces. ATA is here to change that—right when the world is waking up to the need.</p>
+        </section>
+
+        <section>
+          <h2>The Opportunity</h2>
+          <p>The accessible tech space is rapidly expanding, fueled by government mandates, corporate responsibility initiatives, and rising public awareness. ATA is poised to lead this wave with scalable services and a trusted brand rooted in compassion, professionalism, and lived experience.</p>
+        </section>
+
+        <section>
+          <h2>Our Value Proposition</h2>
+          <ul class="offer-list">
+            <li>
+              🔍 Solving a real, growing pain point: digital exclusion
+              <span class="tooltip">
+                <ul>
+                  <li>Over 3 million Canadians lack the digital skills to access essential services.</li>
+                  <li>Digital exclusion deepens marginalization for seniors, disabled individuals, and those in rural communities.</li>
+                  <li>ATA provides personalized coaching to bridge these gaps with dignity and ease.</li>
+                </ul>
+              </span>
+            </li>
+            <li>
+              📈 Untapped and growing market of underserved populations
+              <span class="tooltip">
+                <ul>
+                  <li>The demand for inclusive tech solutions is outpacing supply.</li>
+                  <li>Populations often overlooked—like low-income seniors—represent a major opportunity for impact and growth.</li>
+                  <li>ATA meets people where they are, helping them thrive online.</li>
+                </ul>
+              </span>
+            </li>
+            <li>
+              🤝 Cross-sector partnership potential: tech, health, education, government
+              <span class="tooltip">
+                <ul>
+                  <li>Public health agencies are seeking digital inclusion partners.</li>
+                  <li>Educational institutions are mandated to improve accessibility.</li>
+                  <li>ATA creates value by supporting service delivery, compliance, and community outcomes.</li>
+                </ul>
+              </span>
+            </li>
+            <li>
+              💡 Unique hybrid of care, coaching, and digital empowerment
+              <span class="tooltip">
+                <ul>
+                  <li>Combines compassionate coaching with technical training.</li>
+                  <li>Empowers clients to advocate for themselves and their needs.</li>
+                  <li>Blends social work principles with scalable tech solutions.</li>
+                </ul>
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Revenue & Scaling</h2>
+          <p>ATA generates revenue through consulting, coaching subscriptions, organizational partnerships, and workshop programs. With low overhead and high social impact, our model is designed to scale sustainably through a gig-based coaching workforce and digital tools.</p>
+        </section>
+
+        <section>
+          <h2>Team & Vision</h2>
+          <div class="team-vision-container">
+            <div class="team-text">
+              <p>
+                Founded by Jesse Browning, ATA is rooted in firsthand experience with the systemic barriers that prevent equitable access to technology and care. Our core team is composed of exceptional individuals with deep expertise in IT innovation, software engineering, education for people with disabilities, and inclusive systems design. This includes seasoned technologists, accessibility specialists, caregivers, and educators with backgrounds in both public and private sectors. Our uniquely cross-disciplinary team brings a pioneering spirit, progressive mindset, and polymathic skillsets to the challenge of building scalable, human-centered tech solutions. Together, we aim to position ATA as a national leader in accessible technology and digital empowerment.
+              </p>
+            </div>
+          </div>
+        </section>
+
+        <section>
+          <h2>Our MVP: What We’re Launching</h2>
+          <p>ATA’s Minimum Viable Product delivers real value on day one:</p>
+          <ul class="offer-list">
+            <li>🎯 Personalized remote tech coaching</li>
+            <li>🧩 Gamified self-assessment onboarding tool</li>
+            <li>📚 Digital literacy content hub</li>
+            <li>⚙️ Flexible support subscriptions</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Roadmap & Milestones</h2>
+          <ul class="timeline">
+            <li>
+              <span class="timeline-dot">Q1 2026</span>
+              <span class="timeline-content">
+                Mobile App + Coach Tooling
+                <span class="timeline-subtext">$250k projected revenue</span>
+              </span>
+            </li>
+            <li>
+              <span class="timeline-dot">Q2 2026</span>
+              <span class="timeline-content">
+                Expanded Marketplace + LMS Integration
+                <span class="timeline-subtext">$400k projected revenue</span>
+              </span>
+            </li>
+            <li>
+              <span class="timeline-dot">Q3 2026</span>
+              <span class="timeline-content">
+                National Scale + Partnerships
+                <span class="timeline-subtext">$500k projected revenue</span>
+              </span>
+            </li>
+            <li>
+              <span class="timeline-dot">Q4 2026</span>
+              <span class="timeline-content">
+                AI Integration + Data Insights
+                <span class="timeline-subtext">$750k projected revenue</span>
+              </span>
+            </li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Impact & Investment Potential</h2>
+          <ul class="offer-list">
+            <li>📈 Forecast: 3,000 paid users by end of Year 2</li>
+            <li>📊 Addressing a $10B+ underserved accessibility market</li>
+            <li>🤝 Strong potential for gov + NGO partnerships</li>
+            <li>💡 Scalable model with low overhead</li>
+          </ul>
+        </section>
+
+        <section>
+          <h2>Get Involved</h2>
+          <p>If you're an investor, community leader, or potential partner interested in scaling equitable tech access, we’d love to talk. Let’s build the future of inclusion together.</p>
+          <p>Email: <a href="mailto:info@ata-platform.org">info@ata-platform.org</a></p>
+        </section>
+      </div>
+      <div class="sidebar-widgets">
+        <div class="widget">
+          <h3>YouTube Channel</h3>
+          <div class="video-placeholder">
+            <iframe width="100%" height="215"
+              src="https://www.youtube.com/embed/zTPO_AsfJ80"
+              title="YouTube video player"
+              frameborder="0"
+              allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowfullscreen>
+            </iframe>
+          </div>
+        </div>
+        <div class="widget">
+          <h3>Support Our Work</h3>
+          <a href="https://fnd.us/ToolsForInclusion2025" class="cta-button" target="_blank" style="display: inline-block; padding: 12px 20px; background-color: #007acc; color: white; text-decoration: none; border-radius: 5px; font-weight: 600; text-align: center;">
+            Support Us on FundRazr
+          </a>
+        </div>
+        <div class="widget">
+          <h3>Testimonials</h3>
+          <p>[Quote or rotating testimonial carousel]</p>
+        </div>
+        <div class="widget">
+          <h3>Follow Us</h3>
+          <p>[Embedded social media feed or links]</p>
+        </div>
+        <div class="widget">
+          <h3>Newsletter Signup</h3>
+          <p>[Form or button to subscribe]</p>
+        </div>
+        <div class="widget">
+          <h3>Meet the Team</h3>
+          <div class="team-photo-widget">
+            <img src="muppets.png" alt="Muppet Team Photo" style="width: 100%; border-radius: 6px; object-fit: cover;">
+          </div>
+        </div>
+      </div>
+    </div>
+  </main>
+<script>
+  (function() {
+    var d = document,
+        fr = d.createElement('script');
+    fr.type = 'text/javascript';
+    fr.async = true;
+    fr.src = 'https://static.fundrazr.com/widgets/loader.js';
+    var s = d.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(fr, s);
+  })();
+</script>
+</body>
+</html>
