@@ -313,25 +313,30 @@
 </script>
 <script>
   document.addEventListener("DOMContentLoaded", function () {
-    if (window.innerWidth <= 768) {
-      const offerItems = document.querySelectorAll(".offer-list li");
+    const isMobile = window.innerWidth <= 768;
+    const items = document.querySelectorAll(".offer-list li");
 
-      offerItems.forEach(item => {
+    if (isMobile) {
+      items.forEach(item => {
         const tooltip = item.querySelector(".tooltip");
         if (!tooltip) return;
 
-        item.addEventListener("click", (e) => {
-          e.stopPropagation(); // prevent the document click from immediately hiding it
-          // Toggle current tooltip
-          const isVisible = tooltip.style.display === "block";
-          document.querySelectorAll(".offer-list .tooltip").forEach(t => t.style.display = "none");
-          tooltip.style.display = isVisible ? "none" : "block";
+        item.addEventListener("click", function (e) {
+          e.stopPropagation(); // prevent click from bubbling up
+          // Close all others
+          document.querySelectorAll(".offer-list .tooltip").forEach(t => {
+            if (t !== tooltip) t.style.display = "none";
+          });
+          // Toggle this one
+          tooltip.style.display = (tooltip.style.display === "block") ? "none" : "block";
         });
       });
 
-      // Hide tooltip when clicking elsewhere
-      document.addEventListener("click", () => {
-        document.querySelectorAll(".offer-list .tooltip").forEach(t => t.style.display = "none");
+      // Hide all tooltips if tapping anywhere else
+      document.addEventListener("click", function () {
+        document.querySelectorAll(".offer-list .tooltip").forEach(t => {
+          t.style.display = "none";
+        });
       });
     }
   });
