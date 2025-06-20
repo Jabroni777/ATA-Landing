@@ -6,6 +6,19 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    /* Responsive layout for .main-layout and sidebar widgets */
+    @media (max-width: 768px) {
+      .main-layout {
+        display: flex;
+        flex-direction: column;
+      }
+      .main-content, .sidebar-widgets {
+        width: 100%;
+      }
+      .sidebar-widgets {
+        margin-top: 2rem;
+      }
+    }
     * {
       user-select: none;
     }
