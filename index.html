@@ -6,6 +6,33 @@
   <link rel="stylesheet" href="style.css">
   <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@400;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
   <style>
+    * {
+      user-select: none;
+    }
+
+    .offer-list li,
+    .cta-button,
+    .timeline li,
+    .widget {
+      transition: background 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .offer-list li:active,
+    .cta-button:active,
+    .timeline li:active,
+    .widget:active {
+      outline: 2px solid #007acc;
+      box-shadow: 0 0 10px rgba(0, 122, 204, 0.4);
+      background: linear-gradient(90deg, #f0f4f8 25%, #e0e7ef 50%, #f0f4f8 75%);
+      background-size: 200% 100%;
+      animation: shimmer 0.8s linear forwards;
+    }
+
+    @keyframes shimmer {
+      0% { background-position: -100% 0; }
+      100% { background-position: 100% 0; }
+    }
+
     .video-placeholder,
     .donation-placeholder {
       background: transparent;
@@ -22,6 +49,7 @@
       background: #f8f9fb;
       border-radius: 6px;
       margin-bottom: 8px;
+      user-select: none;
     }
 
     .offer-list li .tooltip {
@@ -321,7 +349,7 @@
         const tooltip = item.querySelector(".tooltip");
         if (!tooltip) return;
 
-        item.addEventListener("click", function (e) {
+        item.addEventListener("pointerdown", function (e) {
           e.stopPropagation(); // prevent click from bubbling up
           // Close all others
           document.querySelectorAll(".offer-list .tooltip").forEach(t => {
@@ -333,7 +361,7 @@
       });
 
       // Hide all tooltips if tapping anywhere else
-      document.addEventListener("click", function () {
+      document.addEventListener("pointerdown", function () {
         document.querySelectorAll(".offer-list .tooltip").forEach(t => {
           t.style.display = "none";
         });
